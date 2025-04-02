@@ -1,8 +1,109 @@
 @import "res/normalize.css";
 
+@font-face {
+    font-family: playfair-display;
+    src: url(res/fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(res/fonts/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
 body {
     max-width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+body > * {
+    z-index: 1;
+}
+body::before {
+    background-color:rgb(0, 178, 209);
+    top: 0;
+    content: '';
+    display: block;
+    min-height: 75vh;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skewY(-10deg);
+    transform-origin: 0%;
+    box-shadow: 1px 1px 5px grey;
+}
+
+img[src$=".svg"] {
+    width: 33px;
+    height: auto;
+}
+h1 {
+    font-family: playfair-display;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+/* header */
+
+header {
+    padding: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header div.picture {
+    background-image: url(res/photos/woman-focused.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    min-width: 35vw;
+    min-height: 35vw;
+    box-shadow: 1px 1px 5px grey;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding: 0.5%;
+}
+header div.picture p {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: playfair-display;
+    color: white;
+    text-shadow: 0px 0px 7px black;
+}
+header div.about {
+    min-height: 20vw;
+    background-color: white;
+    padding: 2.5%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px grey;   
+}
+header div.about p {
+    font-family: roboto;
+    font-size: 1.3rem;
+    color: rgb(80, 80, 80);
+    margin: 0;
+}
+header div.about div.social-media {
+    margin-top: 6%;
+    display: flex;
+    justify-content: end;
+    gap: 30px;
+}
+
+@media (aspect-ratio: 16/9) {
+    img[src$=".svg"] {
+        width: 66px;    
+    }
+    h1 {
+        font-size: 5rem;
+    }
+    header div.picture p {
+        font-size: 7rem;
+    }
+    header div.about p {
+        font-size: 2.3rem;
+    }
 }
