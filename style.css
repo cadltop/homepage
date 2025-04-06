@@ -24,11 +24,11 @@ body::before {
     top: 0;
     content: '';
     display: block;
-    min-height: 75vh;
+    min-height: 78vh;
     left: 0;
     position: absolute;
     right: 0;
-    transform: skewY(-10deg);
+    transform: skewY(-15deg);
     transform-origin: 0%;
     box-shadow: 1px 1px 5px grey;
 }
@@ -37,16 +37,28 @@ img[src$=".svg"] {
     width: 33px;
     height: auto;
 }
-h1 {
+h1,h2 {
     font-family: playfair-display;
-    font-size: 2.5rem;
     font-weight: 400;
+}
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+body > * {
+    padding: 4%;
+}
+div.links {
+    display: flex;
+    justify-content: end;
+    gap: 30px;
 }
 
 /* header */
 
 header {
-    padding: 4%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,11 +98,54 @@ header div.about p {
     color: rgb(80, 80, 80);
     margin: 0;
 }
-header div.about div.social-media {
+header div.about div.links {
+    
     margin-top: 6%;
+}
+
+/* main */
+main div.projects {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 2.5vw;
+}
+main div.projects div.project {
+    box-shadow: 1px 1px 5px grey;
+}
+main div.projects div.project div.screenshot {
     display: flex;
-    justify-content: end;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 20vw;
+}
+main div.projects div.project div.screenshot p {
+    font-family: playfair-display;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    max-width: min-content;
+}
+main div.projects div.project div.description {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    row-gap: 20px;
+    padding: 3% 7%;    
+    align-items: center;
+    height: 7vw;
+    margin-bottom: 5rem;
+}
+main div.projects div.project div.description  > * {
+    margin: 0;
+}
+main div.projects div.project div.description p {
+    font-family: roboto;
+    font-size: 1.1rem;
+    color: rgb(80, 80, 80);
+    grid-column: 1 / 3;
+    min-height: 5rem;
+}
+main div.projects div.project div.description div.links {
+    align-items: center;
 }
 
 @media (aspect-ratio: 16/9) {
@@ -100,10 +155,20 @@ header div.about div.social-media {
     h1 {
         font-size: 5rem;
     }
+    h2 {
+        font-size: 3rem;
+    }
     header div.picture p {
         font-size: 7rem;
     }
-    header div.about p {
+    header div.about p, main div.projects div.project div.description p {
         font-size: 2.3rem;
     }
+    main div.projects div.project div.screenshot p {
+        font-size: 6rem;
+    }
+    main div.projects div.project div.description {
+        margin-bottom: 7.5rem;
+    }
 }
+    
