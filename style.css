@@ -98,12 +98,12 @@ header div.about p {
     color: rgb(80, 80, 80);
     margin: 0;
 }
-header div.about div.links {
-    
+header div.about div.links {   
     margin-top: 6%;
 }
 
 /* main */
+
 main div.projects {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(3, 1fr);
@@ -148,6 +148,44 @@ main div.projects div.project div.description div.links {
     align-items: center;
 }
 
+/* footer */
+
+footer {
+    background-color: rgb(0, 178, 209);
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+footer div.picture {
+    background-image: url(res/photos/woman-waving.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 65%;
+    min-width: 40vw;
+    min-height: 30vw;
+}
+
+footer div.contact h1 {
+    margin: 0;
+}
+
+footer div.contact p {
+    font-family: roboto;
+    font-size: 1.3rem;
+}
+footer div.contact p.methods {
+    line-height: 45px;
+}
+footer div.contact p.methods img {
+    margin-right: 15px;
+    vertical-align: middle;
+}
+footer div.contact div.links {
+    justify-content: start;
+}
+
 @media (aspect-ratio: 16/9) {
     img[src$=".svg"] {
         width: 66px;    
@@ -161,7 +199,7 @@ main div.projects div.project div.description div.links {
     header div.picture p {
         font-size: 7rem;
     }
-    header div.about p, main div.projects div.project div.description p {
+    header div.about p, main div.projects div.project div.description p, footer div.contact p {
         font-size: 2.3rem;
     }
     main div.projects div.project div.screenshot p {
@@ -170,5 +208,7 @@ main div.projects div.project div.description div.links {
     main div.projects div.project div.description {
         margin-bottom: 7.5rem;
     }
+    footer div.contact p.methods {
+        line-height: 90px;
+    }
 }
-    
