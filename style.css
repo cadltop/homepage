@@ -120,7 +120,7 @@ main div.projects div.project div.screenshot {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35rem;
+    min-height: min(35rem, 20vw);
 }
 main div.projects div.project div.screenshot p {
     font-family: playfair-display;
